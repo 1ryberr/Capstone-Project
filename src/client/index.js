@@ -15,7 +15,7 @@ const footer = new Footer('Footer');
 footer.render();
 
 
-document.getElementById('gen').addEventListener("click", performAction);
+//document.getElementById('gen').addEventListener("click", performAction);
 
 
 // if ('serviceWorker' in navigator) {

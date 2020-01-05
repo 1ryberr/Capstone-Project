@@ -1,0 +1,16 @@
+@import "./container.scss";
+
+footer {
+  grid-area: foot;
+  @include justify;
+  padding-bottom: 40px;
+
+  & a {
+    padding-left: 5px;
+    font-size: 0.75em;
+    color: $color-Brown;
+  }
+  & a:hover{
+    color: darken($color-Brown,20%);
+  }
+}

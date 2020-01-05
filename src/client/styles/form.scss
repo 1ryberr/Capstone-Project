@@ -1,0 +1,62 @@
+@import "./container.scss";
+
+form {
+  grid-area: mid;
+  display: flex;
+  @include justify;
+  @include styler;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+  box-shadow: 1em 1em 1em $color-ShadowBrown;
+}
+
+button {
+  font-size: 20px;
+  padding: 7px 15px;
+  background: $color-Brown;
+  color: $color-Gold;
+  border-color: $color-Gold;
+  outline: none;
+  margin: 20%;
+  text-transform: uppercase;
+  &:hover {
+    background-color: darken($color-Brown, 15%);
+  }
+  box-shadow: 0.25em 0.25em 0.25em $color-ShadowBrown;
+  border-radius: 10px;
+}
+
+label {
+  text-shadow: 2px 2px 4px #000000;
+  background-color: $color-Gold;
+  padding-top: 30px;
+  text-align: center;
+  @include textLook(5);
+}
+
+input {
+  font-size: 15px;
+  padding: 7px 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-color: $color-Brown;
+  border-radius: 12px;
+  background-color: lighten($color: $color-Gold, $amount: 20%);
+  box-shadow: 0.12em 0.12em 0.12em $color-ShadowBrown;
+
+}
+
+#label {
+  width: 300px;
+  height: 200px;
+  border: 3px solid $color-Gold;
+  align-self: center;
+  margin-top: 50px;
+  box-shadow: 0.25em 0.25em 0.25em $color-ShadowBrown;
+  background-color: $color-Brown;
+  border-radius: 10px;
+  color: $color-Gold;
+  padding: 20px;
+  padding-top: 30px;
+}

@@ -1,0 +1,50 @@
+$color-Green: #556B2F;
+$color-Brown: #8b4513;
+$color-Gold: #b8860b;
+$color-ShadowBrown: #331400;
+
+* {
+  box-sizing: border-box;
+  font-size: 60%;
+  padding: 0;
+  margin: 0;
+  background-color: $color-Green;
+}
+
+body {
+  display: grid;
+  width: 100%;
+  grid-template-rows: repeat(3, minmax(auto, auto));
+  grid-template-columns: repeat(2, minmax(auto, 40%));
+  grid-template-areas:
+    " head head"
+    " mid mid"
+    " foot foot";
+  gap: 3%;
+  justify-content: center;
+}
+
+@mixin styler {
+		
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;	
+  border: 3px solid $color-Brown;
+  background-color: $color-Gold;
+  padding: 8px;
+  border-radius: 23px;  
+ 
+}
+
+@mixin justify {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+@mixin textLook($size) {
+  text-transform: uppercase;
+  color: $color-Brown;
+  font-size: $size + em;
+  font-weight: bold;
+}

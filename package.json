@@ -1,0 +1,29 @@
+{
+  "name": "capstone-project",
+  "version": "1.0.0",
+  "description": "Weather application ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "Ryan Berry",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.1",
+    "html-webpack-plugin": "^3.2.0",
+    "install": "^0.13.0",
+    "node-sass": "^4.13.0",
+    "npm": "^6.13.4",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "handlebars-loader": "^1.7.1"
+  }
+}

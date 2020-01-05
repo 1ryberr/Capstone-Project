@@ -1,0 +1,17 @@
+@import "./container.scss";
+
+div {
+  grid-area: head;
+  @include justify;
+  margin-top: 50px;
+  
+  & h1 {
+    @include textLook(30);
+    @include styler;
+    box-shadow: .03em .03em .03em $color-ShadowBrown; 
+    text-shadow: 2px 2px 4px #000000;
+    word-wrap: break-word;
+    word-break: break-all;
+  
+  }
+}

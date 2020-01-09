@@ -2,7 +2,9 @@
 
 footer {
   grid-area: foot;
-  @include justify;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
   padding-bottom: 40px;
 
   & a {
@@ -12,5 +14,8 @@ footer {
   }
   & a:hover{
     color: darken($color-Brown,20%);
+  }
+  & p{
+    color: $color-Brown;
   }
 }

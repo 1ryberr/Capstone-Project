@@ -9,9 +9,9 @@ export default class Footer extends Components {
 		super.render();
 
 		const footer = document.createElement('footer');
-		footer.add
+	
 		const dict = [{ key: "1ryber@gmail.com", value: "mailto:1ryber@gmail.com" }, { key: "Twitter", value: "https://twitter.com" }, { key: "FaceBook", value: "https://www.facebook.com" }, { key: "Linkedin", value: "https://www.linkedin.com" }];
-
+        this.p.setAttribute('id','ft')
 		this.p.innerHTML = '\u00A9 Copyright 2019. All Rights Reserved.';
 		footer.appendChild(this.p);
 

@@ -2,44 +2,37 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const path = require('path');
-const dotenv = require('dotenv')
 
-
-dotenv.config();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('dist'));
-const apiKey = `${process.env.API_KEY}`
 
 let data  = [];
+  const postedData = (req, res, next) => {
+    const {destination, summary,wikiURL, departureDate, imageURL, typicalWeather} =  req.body;
+	 console.log(req.body);
+    const newPost = {
+    destination: destination,
+    wikiURL:wikiURL,
+    summary: summary,
+    departureDate: departureDate,
+    imageURL: imageURL,
+    typicalWeather: typicalWeather,
 
-const getData = (req, res) => {
-
-	if (!data) {
-      throw Error("Doesnt work")
     }
-      
-      res.json(data);
-   
-  }
-  
-  app.get('/jokes/random', (req, res) => {
-    request(
-      { url: 'https://joke-api-strict-cors.appspot.com/jokes/random' },
-      (error, response, body) => {
-        if (error || response.statusCode !== 200) {
-          return res.status(500).json({ type: 'error', message: err.message });
-        }
-  
-        res.json(JSON.parse(body));
-      }
-    )
-  });
+     data.unshift(newPost);
+    if (data.length > 5){
+      data.pop();	
+    }
+    res.status(201).json({data: newPost});
+  console.log(data);
+    }
+    
 
-app.get('/', function (req, res) {
-  res.sendFile(path.resolve('dist','index.html'));
+app.post('/',postedData);
+app.get('/data', function (req, res) {
+  res.json(data);
 });
 
 app.listen(4000, function () { console.log('Logged on') });

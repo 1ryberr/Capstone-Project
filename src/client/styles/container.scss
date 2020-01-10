@@ -2,13 +2,14 @@ $color-Green: #556B2F;
 $color-Brown: #8b4513;
 $color-Gold: #b8860b;
 $color-ShadowBrown: #331400;
+$color-Almond:#ffebcd ;
 
 * {
   box-sizing: border-box;
   font-size: 60%;
   padding: 0;
   margin: 0;
-  background-color: #ffebcd;
+  background-color: $color-Almond;
 }
 
 body {

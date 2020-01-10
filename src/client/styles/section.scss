@@ -1,0 +1,100 @@
+@import "./container.scss";
+
+#sec1 {
+  grid-area: midright;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  border-left: 3px solid $color-Brown;
+}
+#gen{
+ 
+  margin-top: 10%;
+}
+button {
+  order: 7;
+  font-size: 20px;
+  margin: 2%;
+  width: 50%;
+  align-self: center;
+  padding: 7px 15px;
+  background: $color-Brown;
+  color: $color-Almond;
+  border-color: $color-Almond;
+  outline: none;
+  text-transform: uppercase;
+  &:hover {
+    background-color: darken($color-Brown, 15%);
+  }
+  &:active {
+  box-shadow: 0 5px #2c2c25;
+  transform: translateY(4px);
+  }
+  box-shadow: 0.25em 0.25em 0.25em $color-ShadowBrown;
+  border-radius: 10px;
+}
+
+#lbl1 {
+  order: 1;
+  text-shadow: 2px 2px 4px #000000;
+  padding-top: 30px;
+  font-size: 20px;
+  color: $color-Brown;
+  margin-left: 30px;
+}
+
+#lbl {
+  order: 3;
+  text-shadow: 2px 2px 4px #000000;
+  padding-top: 15px;
+  font-size: 20px;
+  color: $color-Brown;
+  margin-left: 30px;
+}
+#lbl2 {
+  order: 2;
+  text-shadow: 2px 2px 4px #000000;
+  padding-top: 15px;
+  font-size: 20px;
+  color: $color-Brown;
+  margin-left: 30px;
+}
+
+#in1 {
+  order: 4;
+}
+#in {
+  order: 5;
+}
+
+input {
+  font-size: 15px;
+  padding: 7px 15px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  background-color: darken($color: $color-Almond, $amount: 15%);
+  box-shadow: 0.12em 0.12em 0.12em $color-ShadowBrown;
+  width: 50%;
+  align-self: center;
+}
+
+input[type="text"] {
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+  width: 100%;
+}
+
+
+#fmt{
+  order: 6;
+  display: none;
+  font-size: 15px;
+  align-self: center;
+  color: $color-Brown;
+}

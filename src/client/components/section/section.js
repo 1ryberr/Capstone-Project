@@ -39,17 +39,17 @@ export default class Form extends Components {
 
         const button1 = document.createElement('button');
         button1.type = 'button';
-        button1.innerHTML = "Book Travel";
+        button1.innerHTML = "save Destination";
         button1.setAttribute('id', 'bk');
 
         const button2 = document.createElement('button');
         button2.type = 'button';
-        button2.innerHTML = "Retreive Booking";
+        button2.innerHTML = "Retrieve";
         button2.setAttribute('id', 'rt');
        
         const fmt = document.createElement('p');
         fmt.setAttribute('id','fmt');
-        fmt.innerHTML = "Date must be in this format yyyy.mm.dd"
+        fmt.innerHTML = "format: yyyy.mm.dd"
 
         sec.appendChild(label);
         sec.appendChild(label2);

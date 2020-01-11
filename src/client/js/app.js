@@ -16,7 +16,7 @@ const getDataFromApi = async (baseURL, apiKey) => {
   }
 }
 
-const postData = async (url = '', data = {}) => {
+ const postData = async (url = 'http://localhost:4000', data = {}) => {
 
   const response = await fetch(url, {
     method: 'POST',
@@ -36,7 +36,7 @@ const postData = async (url = '', data = {}) => {
   }
 }
 
-const updateUI = async () => {
+export const updateUI = async () => {
 
   const request = await fetch('http://localhost:4000/data');
 
@@ -45,7 +45,6 @@ const updateUI = async () => {
 
 
     if (typeof data[0].destination === 'undefined') {
-      // document.querySelector('#label').innerHTML = "Please Enter a value to get sentimental analysis."
 
     } else {
 
@@ -173,7 +172,7 @@ export function performAction(e) {
 
 
         const input = document.getElementById('in').value;
-        travelData['departureDate'] = input;
+        travelData['departureDate'] = `Departing ${input}`;
         if (input.length != 0 || input.includes("20", 0) || input.includes(".", 4)) {
           const time = new Date(input).getTime() / 1000;
 
@@ -200,14 +199,9 @@ export function performAction(e) {
 
 }
 
-
-console.log(travelData)
 export function postTravelData() {
   postData('http://localhost:4000', travelData);
 }
 
-export function getTravelData() {
-  updateUI();
-}
 
 

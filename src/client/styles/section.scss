@@ -1,25 +1,32 @@
 @import "./container.scss";
 
+
+
 #sec1 {
   grid-area: midright;
-  padding-left: 40px;
+  padding-left: 4rem;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: auto;
-  border-left: 3px solid $color-Brown;
+  border-left: .3rem solid $color-Brown;
+  @include respond(tab-land) {
+    border-left: 0rem solid transparent; 
+  }
+
 }
+
 #gen{
  
   margin-top: 10%;
 }
 button {
   order: 7;
-  font-size: 20px;
+  font-size: 1.5rem;
   margin: 2%;
   width: 50%;
   align-self: center;
-  padding: 7px 15px;
+  padding: .7rem 1.5rem;
   background: $color-Brown;
   color: $color-Almond;
   border-color: $color-Almond;
@@ -29,37 +36,56 @@ button {
     background-color: darken($color-Brown, 15%);
   }
   &:active {
-  box-shadow: 0 5px #2c2c25;
+  box-shadow: 0 .5rem #2c2c25;
   transform: translateY(4px);
   }
-  box-shadow: 0.25em 0.25em 0.25em $color-ShadowBrown;
+  box-shadow: 0.25rem 0.25rem 0.25rem $color-ShadowBrown;
   border-radius: 10px;
+  
 }
+
+
+p{
+  text-shadow: .2rem .2rem .4rem #000000;
+  padding-top: 1.5rem;
+  font-size: 1.75rem;
+  color: $color-Brown;
+  margin-left: 3rem;
+}
+
 
 #lbl1 {
   order: 1;
-  text-shadow: 2px 2px 4px #000000;
-  padding-top: 30px;
-  font-size: 20px;
-  color: $color-Brown;
-  margin-left: 30px;
+  padding-top: 3rem;
+  
 }
+
 
 #lbl {
   order: 3;
-  text-shadow: 2px 2px 4px #000000;
-  padding-top: 15px;
-  font-size: 20px;
-  color: $color-Brown;
-  margin-left: 30px;
+  
 }
 #lbl2 {
   order: 2;
-  text-shadow: 2px 2px 4px #000000;
-  padding-top: 15px;
-  font-size: 20px;
-  color: $color-Brown;
-  margin-left: 30px;
+}
+
+input {
+  font-size: 1rem;
+  padding: .7rem 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  border-radius: 1.2rem;
+  background-color: darken($color: $color-Almond, $amount: 15%);
+  box-shadow: 0.12em 0.12em 0.12em $color-ShadowBrown;
+  width: 50%;
+  align-self: center;
+  & [type="text"] {
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  &[type="text"]:focus {
+    width: 100%;
+  }
 }
 
 #in1 {
@@ -69,32 +95,11 @@ button {
   order: 5;
 }
 
-input {
-  font-size: 15px;
-  padding: 7px 15px;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  border-radius: 12px;
-  background-color: darken($color: $color-Almond, $amount: 15%);
-  box-shadow: 0.12em 0.12em 0.12em $color-ShadowBrown;
-  width: 50%;
-  align-self: center;
-}
-
-input[type="text"] {
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-input[type="text"]:focus {
-  width: 100%;
-}
-
 
 #fmt{
   order: 6;
   display: none;
-  font-size: 15px;
+  font-size: 1.5rem;
   align-self: center;
   color: $color-Brown;
 }

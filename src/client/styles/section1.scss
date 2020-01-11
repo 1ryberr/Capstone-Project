@@ -11,24 +11,27 @@
 }
 img {
   order: 1;
-  margin-left: 60px;
-  margin-top: 20px;
+  margin-left: 6rem;
+  margin-top: 2rem;
   @include styler;
-  border-radius: 12px;
+  border-radius: 1.2rem;
+  @include respond(tab-land) {
+   margin-top: 6rem;
+  }
 
 }
 
 #status {
   order: 2;
-  font-size: 20px;
-  margin-top: 30px;
-  margin-left: 10px;
+  font-size: 1.75rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
   width: 100%;
   color: $color-Brown;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: .2rem .2rem .4rem #000000;
 }
 #ankor{
   order: 3;
-  margin-left: 10px;
+  margin-left: 1rem;
   color: $color-Brown;
 }

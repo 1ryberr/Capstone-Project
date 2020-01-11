@@ -1,5 +1,6 @@
 
 const travelData = {};
+
 const getDataFromApi = async (baseURL, apiKey) => {
 
   const res = await fetch(baseURL + apiKey)
@@ -16,7 +17,7 @@ const getDataFromApi = async (baseURL, apiKey) => {
   }
 }
 
- const postData = async (url = 'http://localhost:4000', data = {}) => {
+ const postData = async (url = ' ', data = {}) => {
 
   const response = await fetch(url, {
     method: 'POST',
@@ -34,6 +35,7 @@ const getDataFromApi = async (baseURL, apiKey) => {
   } catch (error) {
     console.log("error", error);
   }
+
 }
 
 export const updateUI = async () => {
@@ -81,6 +83,14 @@ function defaultValue() {
 }
 
 export function geoFindMe() {
+
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+
+
   const status = document.querySelector('#status');
   function success(position) {
     const latitude = position.coords.latitude;
@@ -129,7 +139,7 @@ export function geoFindMe() {
     status.textContent = 'Geolocation is not supported by your browser';
   } else {
     status.textContent = 'Locating…';
-    navigator.geolocation.getCurrentPosition(success, showError);
+    navigator.geolocation.getCurrentPosition(success, showError,options);
   }
 
 }

@@ -3,15 +3,20 @@
 div {
   grid-area: head;
   @include justify;
-  margin-top: 50px;
+  margin-top: 5rem;
   
   & h1 {
-    @include textLook(30);
+    @include textLook(8);
     @include styler;
-    padding: 20px;
-    text-shadow: 2px 2px 4px #000000;
+    padding: 2rem;
+    text-shadow: .02rem .02rem .04rem #000000;
     word-wrap: break-word;
     word-break: break-all;
-    border-radius: 23px;  
+    border-radius: 2.3rem;  
+    @include respond(tab-land) {
+      font-size: 6rem;//1 rem = 9px, 9/16 = 50%
+    }
+    
+
   }
 }

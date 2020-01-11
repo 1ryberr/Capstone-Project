@@ -5,10 +5,10 @@ footer {
   justify-self: center;
   align-self: center;
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 4rem;
 
   & a {
-    padding-left: 5px;
+    padding-left: .5rem;
     font-size: 0.75em;
     color: $color-Brown;
   }
@@ -17,5 +17,6 @@ footer {
   }
   & p{
     color: $color-Brown;
+    font-size: 0.75em;
   }
 }

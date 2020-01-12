@@ -42,7 +42,6 @@ $color-Almond: #ffebcd;
 @mixin justify {
   justify-self: center;
   align-self: center;
-  text-align: center;
 }
 
 @mixin textLook($size) {
@@ -52,9 +51,15 @@ $color-Almond: #ffebcd;
   font-weight: bold;
 }
 
+@mixin flexCall {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
 * {
   box-sizing: border-box;
-  font-size: 60%;
   padding: 0;
   margin: 0;
   background-color: $color-Almond;
@@ -83,8 +88,6 @@ font-size: 62.5%; //1rem = 10px, 10px/16px = 62.5%
 }
 
 
-
-
 }
 
 body {
@@ -98,5 +101,12 @@ body {
     " foot foot";
   gap: 3%;
   justify-content: center;
+  @include respond(tab-port) {
+    grid-template-areas: 
+    "head head"
+    "midleft midleft"
+    "midright midright"
+    "foot foot";
+  }
 }
 

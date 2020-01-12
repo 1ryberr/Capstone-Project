@@ -8,7 +8,7 @@ export default class Heading extends Components {
 		super(name);
 		this.headText = headText;
 	}
-	
+
 	render() {
 		super.render();
 

@@ -4,7 +4,8 @@ div {
   grid-area: head;
   @include justify;
   margin-top: 5rem;
-  
+  border: .3rem solid $color-Brown;
+  background-color: $color-Brown;
   & h1 {
     @include textLook(8);
     @include styler;
@@ -13,10 +14,16 @@ div {
     word-wrap: break-word;
     word-break: break-all;
     border-radius: 2.3rem;  
+
     @include respond(tab-land) {
-      font-size: 6rem;//1 rem = 9px, 9/16 = 50%
+      font-size: 6rem;
     }
-    
+    @include respond(tab-port) {
+      font-size: 4rem;
+    }
+    @include respond(phone) {
+      font-size: 3rem;
+    }
 
   }
 }

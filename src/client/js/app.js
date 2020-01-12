@@ -15,9 +15,10 @@ const getDataFromApi = async (baseURL, apiKey) => {
     console.log("error", error);
 
   }
+
 }
 
- const postData = async (url = ' ', data = {}) => {
+const postData = async (url = '', data = {}) => {
 
   const response = await fetch(url, {
     method: 'POST',
@@ -44,7 +45,6 @@ export const updateUI = async () => {
 
   try {
     const data = await request.json();
-
 
     if (typeof data[0].destination === 'undefined') {
 
@@ -80,6 +80,7 @@ function defaultValue() {
   val.value = val.defaultValue;
   let val1 = document.getElementById("in");
   val1.value = val1.defaultValue;
+
 }
 
 export function geoFindMe() {
@@ -105,8 +106,7 @@ export function geoFindMe() {
       .then(function (data) {
         const place = data.geonames[0].name;
         const stat = document.querySelector('#status');
-        stat.innerHTML = `${place}, ${data.geonames[0].countryName}`;
-
+        stat.innerHTML = `${place}, ${typeof data.geonames[0].adminCode1 === 'undefined' ? data.geonames[0].countryName : data.geonames[0].adminCode1}`;
         const pbaseURL = "https://pixabay.com/api/";
         const papiKey = `?key=${process.env.PIXABY_API_KEY}&q=${data.geonames[0].adminName1}&image_type=photo&pretty=true`;
         getDataFromApi(pbaseURL, papiKey)
@@ -139,7 +139,7 @@ export function geoFindMe() {
     status.textContent = 'Geolocation is not supported by your browser';
   } else {
     status.textContent = 'Locating…';
-    navigator.geolocation.getCurrentPosition(success, showError,options);
+    navigator.geolocation.getCurrentPosition(success, showError, options);
   }
 
 }
@@ -183,7 +183,7 @@ export function performAction(e) {
 
         const input = document.getElementById('in').value;
         travelData['departureDate'] = `Departing ${input}`;
-        if (input.length != 0 || input.includes("20", 0) || input.includes(".", 4)) {
+        if (typeof input === 'undefined' || input.includes("20", 0) || input.includes(".", 4)) {
           const time = new Date(input).getTime() / 1000;
 
           const abaseURL = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/";

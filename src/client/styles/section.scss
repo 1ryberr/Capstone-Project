@@ -5,19 +5,17 @@
 #sec1 {
   grid-area: midright;
   padding-left: 4rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
+  @include flexCall;
   border-left: .3rem solid $color-Brown;
   @include respond(tab-land) {
     border-left: 0rem solid transparent; 
   }
-
+  @include respond(tab-port) {
+    border-top: .3rem solid $color-Brown; 
+  }
 }
 
 #gen{
- 
   margin-top: 10%;
 }
 button {
@@ -59,7 +57,6 @@ p{
   padding-top: 3rem;
   
 }
-
 
 #lbl {
   order: 3;

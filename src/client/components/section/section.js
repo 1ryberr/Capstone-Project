@@ -10,7 +10,7 @@ export default class Form extends Components {
         super.render();
 
         const sec = document.createElement('section');
-        sec.setAttribute('id','sec1');
+        sec.setAttribute('id', 'sec1');
         const label1 = document.createElement('p');
         label1.setAttribute('id', 'lbl1');
 
@@ -23,15 +23,15 @@ export default class Form extends Components {
         const input = document.createElement('input');
         input.setAttribute('id', 'in');
         input.type = 'text';
-     
-        input.placeholder =  ' Enter date format: 2012.08.10';
+
+        input.placeholder = ' Enter date format: 2012.08.10';
 
         const label2 = document.createElement('p');
         label2.setAttribute('id', 'lbl2');
 
         const label = document.createElement('p');
         label.setAttribute('id', 'lbl');
-        
+
         const button = document.createElement('button');
         button.type = 'button';
         button.innerHTML = "Destination";
@@ -46,9 +46,9 @@ export default class Form extends Components {
         button2.type = 'button';
         button2.innerHTML = "Retrieve";
         button2.setAttribute('id', 'rt');
-       
+
         const fmt = document.createElement('p');
-        fmt.setAttribute('id','fmt');
+        fmt.setAttribute('id', 'fmt');
         fmt.innerHTML = "format: yyyy.mm.dd"
 
         sec.appendChild(label);
@@ -62,7 +62,7 @@ export default class Form extends Components {
         sec.appendChild(fmt);
         this.body.append(sec);
 
-        
+
     }
 }
 

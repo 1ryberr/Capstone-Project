@@ -1,6 +1,8 @@
 
 const travelData = {};
 
+
+
 const getDataFromApi = async (baseURL, apiKey) => {
 
   const res = await fetch(baseURL + apiKey)
@@ -87,7 +89,7 @@ export function geoFindMe() {
 
   var options = {
     enableHighAccuracy: true,
-    timeout: 5000,
+    timeout: 10000,
     maximumAge: 0
   };
 
@@ -147,7 +149,7 @@ export function geoFindMe() {
 export function performAction(e) {
   document.getElementById('fmt').style.display = "none";
   const input = document.getElementById('in1').value;
-
+ 
   if (input.length != 0) {
 
     const baseURL = "http://api.geonames.org/wikipediaSearchJSON";
@@ -165,6 +167,7 @@ export function performAction(e) {
         img.src = data.geonames[0].thumbnailImg;
         const stat = document.querySelector('#status')
         stat.innerHTML = data.geonames[0].summary;
+      
         const status = document.querySelector('#lbl1');
         status.innerHTML = `My trip to: ${city}, ${state.toUpperCase()}`;
         const place = data.geonames[0].title;
@@ -180,10 +183,9 @@ export function performAction(e) {
             travelData['imageURL'] = data.hits[Math.floor((Math.random() * Object.keys(data.hits).length))].largeImageURL;
           });
 
-
         const input = document.getElementById('in').value;
         travelData['departureDate'] = `Departing ${input}`;
-        if (typeof input === 'undefined' || input.includes("20", 0) || input.includes(".", 4)) {
+        if (input.length != 0 || input.includes("20", 0) || input.includes(".", 4)) {
           const time = new Date(input).getTime() / 1000;
 
           const abaseURL = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/";

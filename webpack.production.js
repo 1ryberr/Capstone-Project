@@ -12,6 +12,7 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
     mode: 'production',
     entry: './src/client/index.js',
+
     optimization: {
         minimize: true,
         splitChunks: {
@@ -56,9 +57,8 @@ module.exports = {
         new Dotenv({
         path: '.env', 
         safe: true }),
-
+       
         
-
         ]
 
 }

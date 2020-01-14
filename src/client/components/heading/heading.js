@@ -13,6 +13,7 @@ export default class Heading extends Components {
 		super.render();
 
 		const h1 = document.createElement('h1');
+		this.div.setAttribute('id','title');
 		h1.innerHTML = this.headText;
 		this.div.appendChild(h1)
 		this.body.appendChild(this.div);

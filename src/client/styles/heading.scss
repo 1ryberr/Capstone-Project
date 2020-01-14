@@ -1,6 +1,6 @@
 @import "./container.scss";
 
-div {
+#title {
   grid-area: head;
   @include justify;
   margin-top: 5rem;
@@ -14,7 +14,7 @@ div {
     word-wrap: break-word;
     word-break: break-all;
     border-radius: 2.3rem;  
-
+    text-shadow: 0.2rem 0.2rem 0.4rem #000000;
     @include respond(tab-land) {
       font-size: 6rem;
     }

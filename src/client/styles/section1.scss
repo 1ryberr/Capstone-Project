@@ -3,7 +3,7 @@
   grid-area: midleft;
   @include justify;
   @include flexCall;
-  justify-content: space-between;
+  //justify-content: space-between;
 }
 img {
   order: 1;
@@ -23,9 +23,8 @@ img {
 
 #status {
   order: 2;
+  padding-right: 3rem;
   font-size: 1.75rem;
-  margin-top: 3rem;
-  margin-left: 1rem;
   width: 100%;
   color: $color-Brown;
   text-shadow: 0.2rem 0.2rem 0.4rem #000000;
@@ -35,6 +34,6 @@ img {
 }
 #ankor {
   order: 3;
-  margin-left: 1rem;
   color: $color-Brown;
+  padding-left: 3rem;
 }

@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-
+const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: './src/client/index.js',
@@ -49,8 +49,8 @@ module.exports = {
         new Dotenv({
             path: './.env',
             safe: true
-        })
-
+        }),
+        new WorkboxPlugin.GenerateSW()
 
 
     ]

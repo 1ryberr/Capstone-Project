@@ -185,7 +185,7 @@ export function performAction(e) {
 
         const input = document.getElementById('in').value;
         travelData['departureDate'] = `Departing ${input}`;
-        if (input.length != 0 || input.includes("20", 0) || input.includes(".", 4)) {
+        if (input.length != 0 && input.includes("20", 0) && input.includes(".", 4)) {
           const time = new Date(input).getTime() / 1000;
 
           const abaseURL = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/";

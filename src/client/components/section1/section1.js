@@ -4,7 +4,7 @@ import Components from '../components.js';
 
 
 export default class AddImage extends Components {
-	constructor(name, path, count) {
+	constructor(name, path) {
 		super(name);
 		this.path = path;
 	}

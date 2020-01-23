@@ -60,6 +60,7 @@ module.exports = {
         safe: true }),
        
         new WorkboxPlugin.GenerateSW()
+        
         ]
 
 }

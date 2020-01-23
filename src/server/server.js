@@ -11,7 +11,7 @@ app.use(express.static('dist'));
 let data  = [];
   const postedData = (req, res, next) => {
     const {destination, summary,wikiURL, departureDate, imageURL, typicalWeather} =  req.body;
-	 console.log(req.body);
+
     const newPost = {
     destination: destination,
     wikiURL:wikiURL,
@@ -19,14 +19,14 @@ let data  = [];
     departureDate: departureDate,
     imageURL: imageURL,
     typicalWeather: typicalWeather,
-
     }
+
      data.unshift(newPost);
+
     if (data.length > 5){
-      data.pop();	
+       data.pop();	
     }
     res.status(201).json({data: newPost});
-  console.log(data);
     }
     
 
@@ -34,6 +34,6 @@ app.post('/',postedData);
 app.get('/data', function (req, res) {
   res.json(data);
 });
-
-app.listen(4000, function () { console.log('Logged on') });
+const port = 4000;
+app.listen(port, function () { console.log(`Logged onto port ${port}`) });
 

@@ -47,7 +47,7 @@ module.exports = {
         }),
 
         new Dotenv({
-            path: './.env',
+            path: '.env',
             safe: true
         }),
         new WorkboxPlugin.GenerateSW()

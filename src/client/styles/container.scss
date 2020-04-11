@@ -100,7 +100,9 @@ body {
     " foot foot";
   gap: 3%;
   justify-content: center;
+
   @include respond(tab-port) {
+    grid-template-rows: repeat(4, minmax(auto, auto));
     grid-template-areas: 
     "head head"
     "midleft midleft"
